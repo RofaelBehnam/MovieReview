@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "/movies/:id" => "movies#show"
   put "/movies/:id" => "movies#update"
   delete "/movies/:id" => "movies#destroy"
+  post "/movies/import" => "movies#import"
   
   post "/movies/:id/filmings" => "filmings#create"
   get "/movies:id/filmings" => "filmings#index"
@@ -25,4 +26,5 @@ Rails.application.routes.draw do
   get "/movies/:id/reviews/:id" => "reviews#show"
   put "/movies/:id/reviews/:id" => "reviews#update"
   delete "/movies/:id/reviews/:id" => "reviews#destroy"
+  post "/reviews/import" => "reviews#import"
 end

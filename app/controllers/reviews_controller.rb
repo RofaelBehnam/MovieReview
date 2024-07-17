@@ -37,6 +37,11 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
   end
+  
+     # POST /reviews/import
+   def import
+    CsvReviewImportService.new.call(params[:file])
+   end
 
   private
      def set_review

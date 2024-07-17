@@ -36,6 +36,11 @@ class MoviesController < ApplicationController
    def destroy
      @movie.destroy
    end
+   
+   # POST /movies/import
+   def import
+    CsvMovieImportService.new.call(params[:file])
+   end
 
    private
 
@@ -44,6 +49,6 @@ class MoviesController < ApplicationController
      end
 
      def movie_params
-       params.require(:movie).permit(:title, :description, :director, :year)
+       params.require(:movie).permit(:file, :title, :description, :director, :year)
      end
 end
