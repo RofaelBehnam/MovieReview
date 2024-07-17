@@ -1,0 +1,2 @@
+class Filming < ApplicationRecord
+end
