@@ -7,6 +7,12 @@ class MoviesController < ApplicationController
     render json: @movies
   end
 
+  # GET /movies/overview
+  def overview
+    @movies = Movie.joins(:reviews).group("movies.id").select("movies.*, AVG(reviews.stars) as average_rating").order("average_rating")
+    render json: @movies
+  end
+  
   # GET /movies/1
   def show
     render json: @movie

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   post "/movies" => "movies#create"
+  get "/movies/overview" => "movies#overview"
   get "/movies" => "movies#index"
   get "/movies/:id" => "movies#show"
   put "/movies/:id" => "movies#update"
