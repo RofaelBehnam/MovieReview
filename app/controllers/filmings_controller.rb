@@ -1,0 +1,2 @@
+class FilmingsController < ApplicationController
+end

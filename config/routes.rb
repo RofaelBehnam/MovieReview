@@ -7,4 +7,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  post "/movies" => "movies#create"
+  get "/movies" => "movies#index"
+  get "/movies/:id" => "movies#show"
+  put "/movies/:id" => "movies#update"
+  delete "/movies/:id" => "movies#destroy"
 end
